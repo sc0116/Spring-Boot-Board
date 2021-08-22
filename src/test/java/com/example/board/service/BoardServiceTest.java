@@ -3,7 +3,6 @@ package com.example.board.service;
 import com.example.board.dto.BoardDTO;
 import com.example.board.dto.PageRequestDTO;
 import com.example.board.dto.PageResultDTO;
-import com.example.board.repository.BoardRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,7 +21,7 @@ class BoardServiceTest {
         BoardDTO dto = BoardDTO.builder()
                 .title("TEST Title")
                 .content("TEST Content")
-                .writerEmail("user55@test.com")
+                .writerEmail("user11@test.com")
                 .build();
 
         Long bno = boardService.register(dto);
