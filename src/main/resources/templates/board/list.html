@@ -11,7 +11,7 @@
             </span>
         </h1>
 
-        <form action="/guestbook/list" method="get" id="searchForm">
+        <form action="/board/list" method="get" id="searchForm">
             <div class="input-group">
                 <input type="hidden" name="page" value="1">
                 <div class="input-group-prepend">
@@ -72,6 +72,29 @@
                 </a>
             </li>
         </ul>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script th:inline="javascript">
+            var msg = [[${msg}]];
+
+            console.log(msg);
+
+            if(msg) {
+                $(".modal").modal();
+            }
+
+            var searchForm = $("#searchForm");
+
+            $('.btn-search').click(function (e) {
+                searchForm.submit();
+            });
+
+            $('.btn-clear').click(function (e) {
+                searchForm.empty().submit();
+            });
+        </script>
+
     </th:block>
 </th:block>
 </html>
